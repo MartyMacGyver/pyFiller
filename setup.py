@@ -25,9 +25,8 @@ setup(
     description=config.DESCRIPTION,
     author='Martin F. Falatic',
     author_email='martin@falatic.com',
-    copyright='Copyright (c) 2020',
     license='MIT License',
-    keywords='filesystem wipe pyfiller',
+    keywords='filesystem wipe filler generator',
     url='https://github.com/MartinFalatic/pyfiller',
     classifiers=[
         'License :: OSI Approved :: MIT License',
@@ -45,6 +44,9 @@ setup(
         'console_scripts': console_scripts,
     },
     install_requires=[
+        'colorama',
+        'humanfriendly',
+        'tqdm',
     ],
     extras_require={},
     package_data={},

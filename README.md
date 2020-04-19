@@ -6,6 +6,21 @@ When you need to fill some filesystem space with patterned or random data, pyFil
 
 Run `pyfiller --help` for usage details
 
+## Common examples
+
+- Fill the specified (existing) folder with random data, up to the limit of the filesystem:
+
+        pyfiller --totalsize fill Y:\
+
+- Create 200MiB files with random data, to a maximum of 750.5MiB, with colorful output:
+
+        pyfiller --filesize 200MiB --totalsize 750.5MiB --colorful Y:\
+
+- Create one 42MiB file with patterned data with colorful output:
+
+        pyfiller --filesize 42MiB --totalsize 42MiB --pattern 0xA5FF00 --colorful Y:\
+        pyfiller --filesize 42MiB --totalsize 42MiB --pattern "J=8675309 " --colorful Y:\
+
 ## Updating this package
 
 Clone this repo
@@ -18,8 +33,8 @@ Ensure you update the version number in `pyfiller/__config__.py`
 ### Build and install the distributable wheel
 
 ```bash
-rm -rf dist build *.egg-info
-python setup.py sdist bdist_wheel
+rm -rf pyfiller-* dist build *.egg-info
+python setup.py bdist_wheel sdist
 ls -al dist
 pip uninstall -y pyfiller
 pip install dist/*.whl

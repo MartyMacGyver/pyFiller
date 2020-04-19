@@ -25,8 +25,8 @@ PARAMS['this_script'] = common.get_script_name_from_filename(__file__)
 
 MIN_BLOCK_SIZE = 512
 
-DEFAULT_TOTALSIZE = "FILL"
-DEFAULT_FILESIZE = "1GiB"
+DEFAULT_TOTALSIZE = "1.0GiB"
+DEFAULT_FILESIZE = "100MiB"
 DEFAULT_BLOCKSIZE = "16MiB"
 DEFAULT_RETRIES = 20
 DEFAULT_TIMEOUT = 5.0
@@ -62,7 +62,7 @@ def setup_and_dispatch():
     parser.add_argument('--suffix', type=str, default=DEFAULT_SUFFIX,
                         help='File suffix / extension')
     parser.add_argument('--totalsize', type=str, default=str(DEFAULT_TOTALSIZE), metavar='SIZE',
-                        help='Total size (up to free space on FS)')
+                        help='Total size (up to free space on FS) or "FILL"')
     parser.add_argument('--filesize', type=str, default=str(DEFAULT_FILESIZE), metavar='SIZE',
                         help='File size (< max file size for FS)')
     parser.add_argument('--blocksize', type=str, default=str(DEFAULT_BLOCKSIZE), metavar='SIZE',
